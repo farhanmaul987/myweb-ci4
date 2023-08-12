@@ -13,4 +13,13 @@ class MatkulModel extends Model
 
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
+
+    public function getMatkul($slug = false)
+    {
+        if ($slug === false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['slug' => $slug])->first();
+    }
 }

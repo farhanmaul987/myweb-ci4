@@ -5,7 +5,7 @@
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
             <div class="position-relative">
-                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <img class="rounded-circle" src="<?= base_url() ?>img/user.jpg" alt="" style="width: 40px; height: 40px;">
             </div>
             <div class="ms-3">
                 <h6 class="mb-0">Anomin</h6>
@@ -14,12 +14,12 @@
 
         <div class="navbar-nav w-100">
             <a href="<?= base_url() ?>" class="nav-item nav-link"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-            <a href="daftar_materi" class="nav-item nav-link"><i class="fas fa-clipboard me-2"></i>Daftar Materi</a>
-            <a href="input_materi" class="nav-item nav-link"><i class="fas fa-keyboard me-2"></i>Input Materi</a>
-            <a href="mata_kuliah" class="nav-item nav-link"><i class="fa fa-list-ul me-2"></i>Mata Kuliah</a>
-            <a href="input_matkul" class="nav-item nav-link"><i class="far fa-keyboard me-2"></i>Input Matkul</a>
-            <a href="admin_data" class="nav-item nav-link"><i class="fas fa-users-cog me-2"></i>Admin</a>
-            <a href="user_data" class="nav-item nav-link"><i class="fas fa-users me-2"></i>User</a>
+            <a href="<?= base_url() ?>daftar_materi" class="nav-item nav-link"><i class="fas fa-clipboard me-2"></i>Daftar Materi</a>
+            <a href="<?= base_url() ?>input_materi" class="nav-item nav-link"><i class="fas fa-keyboard me-2"></i>Input Materi</a>
+            <a href="<?= base_url() ?>mata_kuliah" class="nav-item nav-link"><i class="fa fa-list-ul me-2"></i>Mata Kuliah</a>
+            <a href="<?= base_url() ?>input_matkul" class="nav-item nav-link"><i class="far fa-keyboard me-2"></i>Input Matkul</a>
+            <a href="<?= base_url() ?>admin_data" class="nav-item nav-link"><i class="fas fa-users-cog me-2"></i>Admin</a>
+            <a href="<?= base_url() ?>user_data" class="nav-item nav-link"><i class="fas fa-users me-2"></i>User</a>
         </div>
     </nav>
 </div>

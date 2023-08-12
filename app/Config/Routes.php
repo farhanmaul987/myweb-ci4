@@ -29,13 +29,16 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+// $routes->get('/welcome', 'Home::index');
+
 $routes->get('/', 'Dashboard::index');
 
 $routes->get('/daftar_materi', 'Materi::daftar_materi');
 $routes->get('/input_materi', 'Materi::input_materi');
 
+$routes->get('/mata_kuliah/(:segment)', 'Matkul::detail/$1');
 $routes->get('/mata_kuliah', 'Matkul::matkul');
-$routes->get('/input_matkul', 'Matkul::input_matkul');
+$routes->get('/input_matkul', 'Matkul::create');
 
 $routes->get('/input_admin', 'Admin::input_admin');
 $routes->get('/admin_data', 'Admin::admin_data');

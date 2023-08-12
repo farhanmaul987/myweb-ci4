@@ -2,12 +2,27 @@
 
 namespace App\Controllers;
 
+use App\Models\MateriModel;
+
 class Materi extends BaseController
 {
+    protected $materiModel;
+
+    public function __construct()
+    {
+        $this->materiModel = new MateriModel();
+    }
+
     public function daftar_materi()
     {
-        $data['title'] = 'Daftar Materi';
-        echo view('daftar_materi', $data);
+        $materi = $this->materiModel->findAll();
+
+        $data = [
+            'title' => 'Daftar Materi',
+            'materi' => $materi
+        ];
+
+        return view('materi', $data);
     }
 
     public function input_materi()

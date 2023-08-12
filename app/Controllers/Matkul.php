@@ -15,17 +15,29 @@ class Matkul extends BaseController
 
     public function matkul()
     {
-        $matkul = $this->matkulModel->findAll();
-        
+        // $matkul = $this->matkulModel->findAll();
+
         $data = [
             'title' => 'Mata Kuliah',
-            'matkul' => $matkul
+            'matkul' => $this->matkulModel->getMatkul()
         ];
 
         return view('matkul', $data);
     }
 
-    public function input_matkul()
+    public function detail($slug)
+    {
+        // $matkul = $this->matkulModel->getMatkul($slug);
+
+        $data = [
+            'title' => 'Detail Mata Kuliah',
+            'matkul' => $this->matkulModel->getMatkul($slug)
+        ];
+
+        return view('detail_matkul', $data);
+    }
+
+    public function create()
     {
         $data['title'] = 'Input Mata Kuliah';
         echo view('c_matkul', $data);
