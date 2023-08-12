@@ -2,13 +2,13 @@
 
 Selamat datang di repositori pembelajaran CodeIgniter 4! 🚀
 
-![CodeIgniter 4](https://cdn.jsdelivr.net/gh/codeigniter4/CodeIgniter4/art/ci4logo.png)
+🔥 CodeIgniter 4
 
 👋 Halo, teman-teman pengembang! Di sini saya akan berbagi perjalanan seru saya dalam mempelajari CodeIgniter 4. Saya akan membagikan pengetahuan, pengalaman, dan proyek-proyek menarik yang telah saya pelajari selama perjalanan ini.
 
 ## Tentang CodeIgniter 4
 
-![CodeIgniter](https://cdn.jsdelivr.net/gh/codeigniter4/CodeIgniter4/art/ci4-kickoff-cover.png)
+🔥 CodeIgniter
 
 CodeIgniter 4 adalah framework PHP yang kuat dan ringan untuk membangun aplikasi web yang cepat dan efisien. Dengan struktur yang jelas, dokumentasi yang kaya, dan fitur-fitur canggih, CodeIgniter 4 adalah pilihan ideal bagi pengembang web yang ingin menghasilkan kode yang mudah dipelihara dan diperluas.
 
