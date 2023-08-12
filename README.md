@@ -1,62 +1,48 @@
-# CodeIgniter 4 Application Starter
+# Belajar CodeIgniter 4
 
-## What is CodeIgniter?
+Selamat datang di repositori pembelajaran CodeIgniter 4! 🚀
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+![CodeIgniter 4](https://cdn.jsdelivr.net/gh/codeigniter4/CodeIgniter4/art/ci4logo.png)
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+👋 Halo, teman-teman pengembang! Di sini saya akan berbagi perjalanan seru saya dalam mempelajari CodeIgniter 4. Saya akan membagikan pengetahuan, pengalaman, dan proyek-proyek menarik yang telah saya pelajari selama perjalanan ini.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Tentang CodeIgniter 4
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+![CodeIgniter](https://cdn.jsdelivr.net/gh/codeigniter4/CodeIgniter4/art/ci4-kickoff-cover.png)
 
-## Installation & updates
+CodeIgniter 4 adalah framework PHP yang kuat dan ringan untuk membangun aplikasi web yang cepat dan efisien. Dengan struktur yang jelas, dokumentasi yang kaya, dan fitur-fitur canggih, CodeIgniter 4 adalah pilihan ideal bagi pengembang web yang ingin menghasilkan kode yang mudah dipelihara dan diperluas.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Fitur
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+🔥 Berikut adalah beberapa fitur menarik yang akan Anda pelajari di repo ini:
 
-## Setup
+- 📚 **Dokumentasi Kaya**: Panduan lengkap dan dokumentasi yang menjelaskan setiap aspek CodeIgniter 4.
+- 🚀 **Pengenalan Praktis**: Pengantar langkah demi langkah untuk membantu Anda memahami dasar-dasar framework.
+- 🛠️ **Contoh Proyek**: Contoh proyek-proyek yang dapat Anda pelajari dan gunakan sebagai dasar untuk proyek Anda sendiri.
+- 🧩 **Komponen Kustom**: Panduan tentang bagaimana membangun komponen kustom dan memperluas fungsionalitas bawaan.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## Cara Memulai
 
-## Important Change with index.php
+1. **Klon Repositori Ini**: `git clone https://github.com/username/CodeIgniter4-Belajar.git`
+2. **Instal Dependensi**: Masuk ke direktori proyek dan jalankan `composer install` untuk menginstal semua dependensi.
+3. **Konfigurasi**: Salin `.env.example` menjadi `.env` dan sesuaikan pengaturan database dan lainnya.
+4. **Jalankan Proyek**: Gunakan perintah `php spark serve` untuk menjalankan server pengembangan.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Kontribusi
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+🤝 Kontribusi Anda sangat dihargai! Jika Anda ingin berkontribusi pada proyek ini, silakan buka *Issues* untuk berdiskusi tentang perubahan yang ingin Anda lakukan atau buka *Pull Requests* untuk mengajukan perubahan konkrit.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## Temui Saya
 
-## Repository Management
+🌐 Jangan ragu untuk terhubung dengan saya di media sosial:
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- Twitter: [@username](https://twitter.com/username)
+- LinkedIn: [Nama Anda](https://www.linkedin.com/in/nama_anda)
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Mari kita belajar bersama dan tingkatkan kemampuan kita dalam membangun aplikasi web dengan CodeIgniter 4! 🎉
 
-## Server Requirements
+Terima kasih telah berkunjung! 👏
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+---
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+*Repositori ini dibuat dengan ♥ oleh Nama Anda* 😊
