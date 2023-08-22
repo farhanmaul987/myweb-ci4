@@ -10,7 +10,7 @@
                 <form action="add.php" method="POST">
                     <div class="mb-3">
                         <label class="form-label">Judul Materi/Tugas/Sumber Belajar</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" required>
+                        <input type="text" class="form-control" id="exampleInputEmail1" required autofocus>
                     </div>
                     <!-- <div class="mb-3">
                         <label class="form-label">Mata Kuliah</label>

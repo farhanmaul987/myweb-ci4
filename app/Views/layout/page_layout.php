@@ -61,6 +61,31 @@
                 }
             });
         });
+
+        function validateInput(inputElement) {
+            if (inputElement.value.length >= 1) {
+                inputElement.classList.remove('is-invalid');
+                inputElement.classList.add('is-valid');
+            } else {
+                inputElement.classList.remove('is-valid');
+                inputElement.classList.add('is-invalid');
+            }
+        }
+
+        const inputMatkul = document.getElementById('inputMatkul');
+        inputMatkul.addEventListener('input', function() {
+            validateInput(inputMatkul);
+        });
+
+        const inputDesk = document.getElementById('inputDesk');
+        inputDesk.addEventListener('input', function() {
+            validateInput(inputDesk);
+        });
+
+        const inputProdi = document.getElementById('inputProdi');
+        inputProdi.addEventListener('input', function() {
+            validateInput(inputProdi);
+        });
     </script>
 
     <!-- JavaScript Libraries -->

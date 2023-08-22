@@ -10,12 +10,17 @@
                 <p align="justify" class="mb-3"><?= $matkul['desk_matkul']; ?></p>
                 <p><i>Program Studi: <?= $matkul['prodi']; ?></i></p>
 
-                <a class="btn btn-primary all-icons" href="">
+                <a class="btn btn-warning all-icons" href="<?php echo base_url(); ?>mata_kuliah/edit/<?= $matkul['slug']; ?>">
                     <i class="fas fa-edit"></i> Edit
                 </a>
-                <a class="btn btn-primary all-icons" href="">
+                <form action="<?php echo base_url(); ?>mata_kuliah/delete/<?= $matkul['id_matkul']; ?>" method="post" class="d-inline">
+                    <?= csrf_field(); ?>
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger all-icons" onclick="return confirm('Apakah anda yakin ingin menghapus mata kuliah <?= $matkul['nama_matkul']; ?>')"><i class="fas fa-trash"></i> Delete</button>
+                </form>
+                <!-- <a class="btn btn-danger all-icons" href="">
                     <i class="fas fa-trash"></i> Delete
-                </a>
+                </a> -->
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@
             <a href="<?= base_url() ?>daftar_materi" class="nav-item nav-link"><i class="fas fa-clipboard me-2"></i>Daftar Materi</a>
             <a href="<?= base_url() ?>input_materi" class="nav-item nav-link"><i class="fas fa-keyboard me-2"></i>Input Materi</a>
             <a href="<?= base_url() ?>mata_kuliah" class="nav-item nav-link"><i class="fa fa-list-ul me-2"></i>Mata Kuliah</a>
-            <a href="<?= base_url() ?>input_matkul" class="nav-item nav-link"><i class="far fa-keyboard me-2"></i>Input Matkul</a>
+            <a href="<?= base_url() ?>mata_kuliah/input" class="nav-item nav-link"><i class="far fa-keyboard me-2"></i>Input Matkul</a>
             <a href="<?= base_url() ?>admin_data" class="nav-item nav-link"><i class="fas fa-users-cog me-2"></i>Admin</a>
             <a href="<?= base_url() ?>user_data" class="nav-item nav-link"><i class="fas fa-users me-2"></i>User</a>
         </div>

@@ -33,18 +33,32 @@ $routes->set404Override();
 
 $routes->get('/', 'Dashboard::index');
 
-$routes->get('/daftar_materi', 'Materi::daftar_materi');
-$routes->get('/input_materi', 'Materi::input_materi');
+$routes->get('daftar_materi', 'Materi::daftar_materi');
+$routes->get('input_materi', 'Materi::input_materi');
 
-$routes->get('/mata_kuliah/(:segment)', 'Matkul::detail/$1');
-$routes->get('/mata_kuliah', 'Matkul::matkul');
-$routes->get('/input_matkul', 'Matkul::create');
+$routes->group('mata_kuliah', function ($routes) {
+    $routes->get('', 'Matkul::matkul');
+    $routes->get('detail/(:any)', 'Matkul::detail/$1');
+    $routes->get('input', 'Matkul::create');
+    $routes->post('save', 'Matkul::save');
+    $routes->delete('delete/(:num)', 'Matkul::delete/$1');
+    $routes->get('edit/(:segment)', 'Matkul::edit/$1');
+    $routes->post('update/(:num)', 'Matkul::update/$1');
+});
 
-$routes->get('/input_admin', 'Admin::input_admin');
-$routes->get('/admin_data', 'Admin::admin_data');
+// $routes->get('mata_kuliah', 'Matkul::matkul');
+// $routes->get('mata_kuliah/detail/(:any)', 'Matkul::detail/$1');
+// $routes->get('input_matkul', 'Matkul::create');
+// $routes->post('save_matkul', 'Matkul::save');
+// $routes->delete('mata_kuliah/delete/(:num)', 'Matkul::delete/$1');
+// $routes->get('mata_kuliah/edit/(:segment)', 'Matkul::edit/$1');
+// $routes->post('update_matkul/(:num)', 'Matkul::update/$1');
 
-$routes->get('/input_user', 'User::input_user');
-$routes->get('/user_data', 'User::user_data');
+$routes->get('input_admin', 'Admin::input_admin');
+$routes->get('admin_data', 'Admin::admin_data');
+
+$routes->get('input_user', 'User::input_user');
+$routes->get('user_data', 'User::user_data');
 
 /*
  * --------------------------------------------------------------------
@@ -60,5 +74,5 @@ $routes->get('/user_data', 'User::user_data');
  * needing to reload it.
  */
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
-    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+    require_once APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

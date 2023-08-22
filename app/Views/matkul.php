@@ -24,15 +24,19 @@
                             <td><?= $mk['prodi'] ?></td>
                             <td>8 Agustus 2023</td>
                             <td class="actions-icon">
-                                <a class="btn btn-sm btn-primary all-icons" href="/mata_kuliah/<?= $mk['slug'] ?>">
+                                <a class="btn btn-sm btn-warning all-icons" href="mata_kuliah/detail/<?= $mk['slug'] ?>">
                                     <i class="fas fa-eye"></i> Detail
                                 </a>
-                                <a class="btn btn-sm btn-primary all-icons" href="">
+
+                                <a class="btn btn-sm btn-info all-icons" href="mata_kuliah/edit/<?= $mk['slug'] ?>">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
-                                <a class="btn btn-sm btn-primary all-icons" href="">
-                                    <i class="fas fa-trash"></i> Delete
-                                </a>
+
+                                <form action="mata_kuliah/delete/<?= $mk['id_matkul'] ?>" method="post">
+                                    <?= csrf_field(); ?>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-sm btn-danger all-icons" onclick="return confirm('Apakah anda yakin ingin menghapus mata kuliah <?= $mk['nama_matkul'] ?>?')"><i class="fas fa-trash"></i> Delete</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach ?>
