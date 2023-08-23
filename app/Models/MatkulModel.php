@@ -10,7 +10,7 @@ class MatkulModel extends Model
     protected $primaryKey = 'id_matkul';
 
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['nama_matkul', 'slug', 'desk_matkul', 'prodi'];
+    protected $allowedFields = ['nama_matkul', 'slug', 'desk_matkul', 'prodi', 'thumbnail'];
 
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';

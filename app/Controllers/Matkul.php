@@ -52,10 +52,27 @@ class Matkul extends BaseController
         // Validasi Input
         if (!$this->validate([
             'nama_matkul' => 'required|is_unique[mata_kuliah.nama_matkul]',
+            'thumbnail' => 'max_size[thumbnail,3072]|is_image[thumbnail]|mime_in[thumbnail,image/jpg,image/jpeg,image/png]'
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('mata_kuliah/input')->withInput()->with('validation', $validation);
+            // $validation = \Config\Services::validation();
+            // return redirect()->to('mata_kuliah/input')->withInput()->with('validation', $validation);
+            return redirect()->to('mata_kuliah/input')->withInput();
         }
+
+        // Ambil Gambar
+        $thumbfile = $this->request->getFile('thumbnail');
+
+        // Jika tidak upload file gambar
+        if ($thumbfile->getError() == 4) {
+            $thumbname = 'default.jpg';
+        } else {
+            // Generate Random Name
+            $thumbname = $thumbfile->getRandomName();
+
+            // Pindah Image ke Folder
+            $thumbfile->move('img', $thumbname);
+        }
+
 
         $slug = url_title($this->request->getVar('nama_matkul'), '-', true);
 
@@ -64,6 +81,7 @@ class Matkul extends BaseController
             'slug' => $slug,
             'desk_matkul' => $this->request->getVar('desk_matkul'),
             'prodi' => $this->request->getVar('prodi'),
+            'thumbnail' => $thumbname
         ]);
 
         return redirect()->to('mata_kuliah');
@@ -71,6 +89,17 @@ class Matkul extends BaseController
 
     public function delete($id)
     {
+
+        // Cari gambar berdasarkan ID
+        $matkul = $this->matkulModel->find($id);
+
+        // Cek jika gambarnya default
+        if ($matkul['thumbnail'] !== 'default.jpg') {
+            // Hapus gambar
+            unlink('img/' . $matkul['thumbnail']);
+        }
+
+
         $this->matkulModel->delete($id);
         return redirect()->to('mata_kuliah');
     }
@@ -100,9 +129,26 @@ class Matkul extends BaseController
         // Validasi Input
         if (!$this->validate([
             'nama_matkul' => $rule_nama_matkul,
+            'thumbnail' => 'max_size[thumbnail,3072]|is_image[thumbnail]|mime_in[thumbnail,image/jpg,image/jpeg,image/png]'
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('mata_kuliah/edit/' . $this->request->getVar('slug'))->withInput()->with('validation', $validation);
+            return redirect()->to('mata_kuliah/edit/' . $this->request->getVar('slug'))->withInput();
+        }
+
+        // Ambil Gambar
+        $thumbfile = $this->request->getFile('thumbnail');
+
+        // Cek gambar lama
+        if ($thumbfile->getError() == 4) {
+            $thumbname = $this->request->getVar('oldthumb');
+        } else {
+            // Generate Random Name
+            $thumbname = $thumbfile->getRandomName();
+
+            // Move Image
+            $thumbfile->move('img', $thumbname);
+
+            // Hapus Image
+            unlink('img/' . $this->request->getVar('oldthumb'));
         }
 
         $slug = url_title($this->request->getVar('nama_matkul'), '-', true);
@@ -112,7 +158,8 @@ class Matkul extends BaseController
             'nama_matkul' => $this->request->getVar('nama_matkul'),
             'slug' => $slug,
             'desk_matkul' => $this->request->getVar('desk_matkul'),
-            'prodi' => $this->request->getVar('prodi')
+            'prodi' => $this->request->getVar('prodi'),
+            'thumbnail' => $thumbname
         ]);
 
         return redirect()->to('mata_kuliah');
