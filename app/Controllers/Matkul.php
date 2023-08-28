@@ -137,9 +137,13 @@ class Matkul extends BaseController
         // Ambil Gambar
         $thumbfile = $this->request->getFile('thumbnail');
 
+        // Cek apakah gambar lama adalah gambar default
+        $isDefaultImage = ($this->request->getVar('oldthumb') === 'default.jpg');
+
         // Cek gambar lama
         if ($thumbfile->getError() == 4) {
-            $thumbname = $this->request->getVar('oldthumb');
+            // Gunakan gambar lama jika bukan gambar default
+            $thumbname = $isDefaultImage ? 'default.jpg' : $this->request->getVar('oldthumb');
         } else {
             // Generate Random Name
             $thumbname = $thumbfile->getRandomName();
@@ -147,8 +151,10 @@ class Matkul extends BaseController
             // Move Image
             $thumbfile->move('img', $thumbname);
 
-            // Hapus Image
-            unlink('img/' . $this->request->getVar('oldthumb'));
+            // Hapus Image lama jika bukan gambar default
+            if (!$isDefaultImage) {
+                unlink('img/' . $this->request->getVar('oldthumb'));
+            }
         }
 
         $slug = url_title($this->request->getVar('nama_matkul'), '-', true);
